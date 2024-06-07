@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TheFirstMemo" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorAccent">#6563EA</item>
+        <item name="colorPrimary">#6563EA</item>
+    </style>
+
+    <style name="Theme.TheFirstMemo" parent="Base.Theme.TheFirstMemo" />
+</resources>

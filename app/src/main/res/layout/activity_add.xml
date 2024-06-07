@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="colorState"
+            type="Integer"
+            android:value="1" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_alternates_black_italic"
+            android:text="Create Tasks"
+            android:textColor="#FF222222"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="Color"
+            android:textColor="#FF222222"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_add"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:layout_editor_absoluteX="20dp">
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="19dp"
+                android:layout_weight="1"
+                android:background="@{colorState ==1?@drawable/bg_color_1:@drawable/bg_color_1_dis}" />
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="19dp"
+                android:layout_weight="1"
+                android:background="@{colorState ==2?@drawable/bg_color_2:@drawable/bg_color_2_dis}"  />
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="19dp"
+                android:layout_weight="1"
+                android:background="@{colorState ==3?@drawable/bg_color_3:@drawable/bg_color_3_dis}"  />
+
+            <View
+                android:id="@+id/view_4"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="19dp"
+                android:layout_weight="1"
+                android:background="@{colorState ==4?@drawable/bg_color_4:@drawable/bg_color_4_dis}"  />
+
+            <View
+                android:id="@+id/view_5"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="19dp"
+                android:layout_weight="1"
+                android:background="@{colorState ==5?@drawable/bg_color_5:@drawable/bg_color_5_dis}"  />
+
+            <View
+                android:id="@+id/view_6"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:background="@{colorState ==6?@drawable/bg_color_6:@drawable/bg_color_6_dis}"  />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="100dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_add"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:layout_editor_absoluteX="20dp">
+
+            <EditText
+                android:id="@+id/ed_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Task Name"
+                android:focusable="true"
+                android:maxLength="200"
+                android:textColor="@color/black"
+                android:textColorHint="#FFCCCCCC"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_add"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/ll_name"
+            tools:layout_editor_absoluteX="20dp">
+
+            <EditText
+                android:id="@+id/ed_notes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="Additional Notes"
+                android:maxLength="1000"
+                android:textColor="@color/black"
+                android:textColorHint="#FFCCCCCC"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="240dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="52dp"
+            android:background="@drawable/bg_save"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
